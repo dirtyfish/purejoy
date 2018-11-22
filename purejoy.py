@@ -63,8 +63,12 @@ print (d)
 maxrelease=""
 for x in d:
 	xstr=x[-3:]
-	if int(xstr)>700:break
-	maxrelease= (xstr)
+	try:
+		if int(xstr)>700:
+			break
+	except:
+		print("What is git doing here?")
+	maxrelease=xstr
 
 maxrelease=".\\\\Release"+maxrelease
 print ("Latest release:",(maxrelease))
